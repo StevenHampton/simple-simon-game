@@ -57,19 +57,36 @@ h6{
     border: 1px solid black;
 }
 
-#blue{
+.blue{
     border-top-right-radius: 30em;
     background-color: blue;
 }
-#green{
+.blue-active{
+    border-top-right-radius: 30em;
+    background-color: lightskyblue;
+}
+
+.green{
     background-color: green;
     border-bottom-left-radius: 30em;
 }
-#red{
+.green-active{
+    background-color: lightgreen;
+    border-bottom-left-radius: 30em;
+}
+.red{
     background-color: red;
     border-top-left-radius: 30em;
 }
-#yellow{
+.red-active{
+    background-color: lightcoral;
+    border-top-left-radius: 30em;
+}
+.yellow{
     background-color: yellow;
+    border-bottom-right-radius: 30em;
+}
+.yellow-active{
+    background-color: lightyellow;
     border-bottom-right-radius: 30em;
 }
