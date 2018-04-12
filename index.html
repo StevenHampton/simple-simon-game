@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="simple-simon.css">
 </head>
 <body>
-<div class="container" id="mainSquare">
-    <row>
-        <div class="selection red" id="0"></div>
-        <div class="selection blue" id="1"></div>
-    </row>
-    <div id="centerCircle">
-        <h5 id="mainHeader"><strong>Simple Simon</strong></h5>
-        <h6>COUNT</h6>
-        <div id="displayCounter" class="display inline">00</div>
-        <button id="start"><h5>START</h5></button>
+<div class="container">
+    <div class="header">
+        <h1></h1>
     </div>
-    <row>
-        <div class="selection green" id="2"></div>
-        <div class="selection yellow" id="3"></div>
-    </row>
+    <div class="simonBoard ">
+        <div id="0" class="pad green"></div>
+        <div id="1" class="pad red"></div>
+        <div id="2" class="pad yellow"></div>
+        <div id="3" class="pad blue"></div>
+        <div class="board-controls">
+            <div class="title">SIMON</div>
+            <div class="display inline">00</div>
+            <div class="start inline">START</div>
+        </div>
+    </div>
+</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
