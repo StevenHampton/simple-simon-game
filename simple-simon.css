@@ -33,17 +33,17 @@ h6{
 }
 #displayCounter{
     border-radius: 25%;
-    height: 3em;
-    width: 4em;
+    height: 1.4em;
+    width: 2em;
     background-color: papayawhip;
     border: 1px solid black;
-    margin-top: 5px;
-    margin-left: .7em;
+    font-size: 30px;
+    margin-left: 15px;
 }
 
 #start{
     border-radius: 25%;
-    margin: -44px 0px 20px 12px;
+    margin: -39px 0px 20px 12px;
     background-color: papayawhip;
     border: 1px solid black;
     float: right;
