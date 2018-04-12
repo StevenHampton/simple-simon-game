@@ -1,0 +1,75 @@
+simple-simon-game*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    text-align: center;
+    background-image: url("imgs/wood-table-top-background.jpg");
+}
+
+#mainHeader{
+    margin-top: 1em;
+}
+#mainSquare{
+    height: 40em;
+    width: 40em;
+    margin: 5em auto;
+    border-radius: 50%;
+    background-color: transparent;
+
+}
+h6{
+    text-align: left;
+    margin: 10px 0 0 20px;
+}
+#centerCircle{
+    height: 12em;
+    width: 12em;
+    border-radius: 50%;
+    position: absolute;
+    margin: 11.9em;
+    border: 1px solid black;
+    background-color: grey;
+}
+#displayCounter{
+    border-radius: 25%;
+    height: 3em;
+    width: 4em;
+    background-color: papayawhip;
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-left: .7em;
+}
+
+#start{
+    border-radius: 25%;
+    margin: -44px 0px 20px 12px;
+    background-color: papayawhip;
+    border: 1px solid black;
+    float: right;
+    position: absolute;
+}
+.selection{
+    border-radius: inherit;
+    float: left;
+    height: 18em;
+    width: 18em;
+    border: 1px solid black;
+}
+
+#blue{
+    border-top-right-radius: 30em;
+    background-color: blue;
+}
+#green{
+    background-color: green;
+    border-bottom-left-radius: 30em;
+}
+#red{
+    background-color: red;
+    border-top-left-radius: 30em;
+}
+#yellow{
+    background-color: yellow;
+    border-bottom-right-radius: 30em;
+}
