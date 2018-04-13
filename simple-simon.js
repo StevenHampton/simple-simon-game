@@ -6,7 +6,7 @@ var id, color, level = 0;
 //1- start board sequence
 $(document).ready(function() {
     $(".display").text("");
-    $(".start").click(function () {
+    $(".start").click(function() {
         level = 0;
         level++;
         simonSeq = [];
@@ -15,8 +15,8 @@ $(document).ready(function() {
     });
 
     //user pad listener
-    $(".pad").click(function () {
-        id = $(this).attr("id");
+    $(".pad").click(function() {
+        id = parseInt($(this).attr("id"));
         userSeq.push(id);
         color = $(this).attr("class").slice(4);
         userSequence(color, id);
@@ -31,25 +31,25 @@ function getRandomNum() {
 
 /* add temporary class */
 function addTempClass(id, color) {
-    $("#"+id).addClass(color+"-active");
-    setTimeout(function(){
-        $("#"+id).removeClass(color+"-active");
-    }, 500);
+    $("#" + id).addClass(color + "-active");
+    setTimeout(function() {
+        $("#" + id).removeClass(color + "-active");
+    }, 300);
 }
 
 /* simon sequence */
 function simonSequence() {
     getRandomNum();
-    console.log("level "+level);
+    console.log("level " + level);
     $(".display").text(level);
     var i = 0;
-    id = simonSeq[i];
     var myInterval = setInterval(function() {
-        color = $("#"+id).attr("class").slice(4);
-        console.log(id+" "+color);
+        id = simonSeq[i];
+        color = $("#" + id).attr("class").slice(4);
+        console.log(id + " " + color);
         addTempClass(id, color);
         i++;
-        if(i === simonSeq.length) {
+        if (i === simonSeq.length) {
             clearInterval(myInterval);
         }
     }, 1000);
@@ -57,23 +57,39 @@ function simonSequence() {
 
 //user sequence
 function userSequence() {
-    console.log(id+" "+color);
+    console.log(id + " " + color);
     addTempClass(id, color);
     userSeqCorrect(userSeq, simonSeq);
-    if(userSeqCorrect()) {
-        level++;
-        console.log("start simon");
-        simonSequence();
+    if (userSeq.length === simonSeq.length) {
+        if (userSeqCorrect() === true) {
+            userSeq = [];
+            level++;
+            console.log("start simon");
+            simonSequence();
+        } else {
+            resetGame();
+        }
     }
 }
 
 /* checking user seq against simon's */
 function userSeqCorrect() {
+    var counter = 0;
     console.log(userSeq + " " + simonSeq);
-    for(var i = 0; i < simonSeq.length; i++) {
-        if(userSeq[i] == simonSeq[i]) {
-            return true;
+    for (var i = 0; i < userSeq.length; i++) {
+        if (userSeq[i] === simonSeq[i]) {
+            counter += 1;
+        }
+        if (counter === simonSeq.length) {
+            return true
         }
     }
 }
 
+/* reset game */
+function resetGame() {
+    userSeq = [];
+    simonSeq = [];
+    level = 0;
+    $(".display").text("00");
+}
