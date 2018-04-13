@@ -1,9 +1,7 @@
-//variables
 var userSeq = [];
 var simonSeq = [];
 var id, color, level = 0;
 
-//1- start board sequence
 $(document).ready(function() {
     $(".display").text("");
     $(".start").click(function() {
@@ -14,7 +12,6 @@ $(document).ready(function() {
         simonSequence();
     });
 
-    //user pad listener
     $(".pad").click(function() {
         id = parseInt($(this).attr("id"));
         userSeq.push(id);
@@ -23,21 +20,6 @@ $(document).ready(function() {
     });
 });
 
-//generate random number
-function getRandomNum() {
-    var random = Math.floor(Math.random() * 4);
-    simonSeq.push(random);
-}
-
-/* add temporary class */
-function addTempClass(id, color) {
-    $("#" + id).addClass(color + "-active");
-    setTimeout(function() {
-        $("#" + id).removeClass(color + "-active");
-    }, 300);
-}
-
-/* simon sequence */
 function simonSequence() {
     getRandomNum();
     console.log("level " + level);
@@ -55,7 +37,6 @@ function simonSequence() {
     }, 1000);
 }
 
-//user sequence
 function userSequence() {
     console.log(id + " " + color);
     addTempClass(id, color);
@@ -72,7 +53,6 @@ function userSequence() {
     }
 }
 
-/* checking user seq against simon's */
 function userSeqCorrect() {
     var counter = 0;
     console.log(userSeq + " " + simonSeq);
@@ -86,7 +66,18 @@ function userSeqCorrect() {
     }
 }
 
-/* reset game */
+function getRandomNum() {
+    var random = Math.floor(Math.random() * 4);
+    simonSeq.push(random);
+}
+
+function addTempClass(id, color) {
+    $("#" + id).addClass(color + "-active");
+    setTimeout(function() {
+        $("#" + id).removeClass(color + "-active");
+    }, 300);
+}
+
 function resetGame() {
     userSeq = [];
     simonSeq = [];
