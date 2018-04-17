@@ -34,7 +34,7 @@ function simonSequence() {
         if (i === simonSeq.length) {
             clearInterval(myInterval);
         }
-    }, 1000);
+    }, 5000);
 }
 
 function userSequence() {
@@ -75,7 +75,7 @@ function addTempClass(id, color) {
     $("#" + id).addClass(color + "-active");
     setTimeout(function() {
         $("#" + id).removeClass(color + "-active");
-    }, 300);
+    }, 200);
 }
 
 function resetGame() {
